@@ -12,6 +12,7 @@ stages:
     cmd: python src/split.py --config=param.yaml
     deps:
     - src/get_data.py
+    - src/split.py
     - data/raw/winequality.csv
     outs:
     - data/processed/train_data.csv
