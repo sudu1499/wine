@@ -2,4 +2,4 @@ dvc
 dvc[gdrive]
 numpy
 sklearn
-
+pandas
