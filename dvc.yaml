@@ -1,6 +1,6 @@
 stages:
   load_data:
-    cmd: python src/load_data.py --config=param.yaml
+    cmd: python src/load_data.py --config=params.yaml
     deps:
     - src/load_data.py
     - src/get_data.py
@@ -9,7 +9,7 @@ stages:
     - data/raw/winequality.csv
 
   split_data:
-    cmd: python src/split.py --config=param.yaml
+    cmd: python src/split.py --config=params.yaml
     deps:
     - src/get_data.py
     - src/split.py
@@ -17,3 +17,20 @@ stages:
     outs:
     - data/processed/train_data.csv
     - data/processed/test_data.csv
+
+  train_eval:
+    cmd: python src\train_evaluate.py --config=params.yaml
+    deps:
+    - src/train_evaluate.py
+    - data/processed/train_data.csv
+    - data/processed/test_data.csv
+    params:
+    - estimator.Random_forest_regressor.params.n_estimators
+    - estimator.Random_forest_regressor.params.random_state
+    metrics:
+    - report\params.json:
+        cache: false
+    - report\scores.json:
+        cache: false
+    outs:
+    - saved_models/model.pkl
