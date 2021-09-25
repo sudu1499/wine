@@ -49,15 +49,15 @@ stages:
       size: 1959
     params:
       params.yaml:
-        estimator.Random_forest_regressor.params.n_estimators: 20
-        estimator.Random_forest_regressor.params.random_state: 0
+        estimator.Random_forest_regressor.params.n_estimators: 10
+        estimator.Random_forest_regressor.params.random_state: 42
     outs:
     - path: report\params.json
-      md5: 48676870f72fbeabd388a2a184fbd1f2
-      size: 51
+      md5: 751a28a3d9866197319a5548c4ccb199
+      size: 52
     - path: report\scores.json
-      md5: 099f8db70889d2a890ae7b5f3f7ff5d1
-      size: 100
+      md5: 15a10754dbbdda96c1327a49980e90ef
+      size: 99
     - path: saved_models/model.pkl
-      md5: 8add278a861ce3936a25be7d6d42a6b7
-      size: 610599
+      md5: f8d838d7e6a46a86d6f0e16c798e7e2c
+      size: 311960

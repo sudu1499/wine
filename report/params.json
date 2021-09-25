@@ -1,4 +1,4 @@
 {
-    "n_estimator": 20,
-    "random_state": 0
+    "n_estimator": 10,
+    "random_state": 42
 }

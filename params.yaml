@@ -17,8 +17,8 @@ split_data:
 estimator:
   Random_forest_regressor:
     params:
-      n_estimators: 20
-      random_state: 0
+      n_estimators: 10
+      random_state: 42
 
 model_dir: saved_models
 
