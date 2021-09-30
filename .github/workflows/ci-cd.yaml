@@ -1,25 +1,21 @@
 name: python-application
 
-on:
-  push:
-    branches:
-    - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-       fetch-depth: 0
-    - name: set up python 3.9
+        fetch-depth: 0
+    - name: setup python
       uses: actions/setup-python@v2
-      with: 
+      with:
         python-version: 3.9
-    - name: Install dependencies
+    - name: install pip
       run: |
-        python -m pip install --upgrade pip
-        pip install -r recquirement.txt
-    - name: test with tox
+      python -m pip install --upgrade pip
+      pip install -r recquirement.txt
+    - name: pytest
       run: |
-        tox 
+      tox
+    
