@@ -22,4 +22,4 @@ jobs:
         pip install -r recquirement.txt
     - name: test with tox
       run: |
-        tox
+        tox 
